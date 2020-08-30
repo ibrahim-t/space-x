@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: justify;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.main-content {
+  display: grid;
+  grid-template-columns: 20% auto;
+  margin: 10px;
+}
+.filterbar {
+  grid-auto-rows: max-content;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.year, .landing, .launch {
+  justify-self: center;
+  align-self: center;
+  background-color: lightgreen;
+  padding: 7px;
+  margin: 10px;
+  border-radius: 12px;
+}
+.year-inactive  {
+  background-color: lightgreen;
+}
+.year-active, .success {
+  background-color: darkgreen;
+}
+.Rocket-list {
+  background-color: lavender;
+  border: 3px double;
+  display: grid;
+  padding: 10px;
+  grid-auto-rows: max-content;
+  grid-template-columns: auto auto auto auto;
+}
+.rocket-card {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid;
+  background-color: ghostwhite;
+}
+
+.text-style{
+  text-align: center;
+  text-decoration: underline;
+}
