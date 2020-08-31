@@ -63,21 +63,26 @@ export class Filterbar extends React.Component {
 
         {successfullLanding.map((t, index) => (
           <span
-          className={`landing ${
-            typeof this.state.landing === "boolean" && this.state.landing===t ? "success":""
-          }`}
-          onClick={() => this.updateLandingStatus(t)}
-          key={`landing-${index}`}
+            className={`landing ${
+              typeof this.state.landing === "boolean" &&
+              this.state.landing === t
+                ? "success"
+                : ""
+            }`}
+            onClick={() => this.updateLandingStatus(t)}
+            key={`landing-${index}`}
           >
             {`${t}`}
           </span>
         ))}
-        <h4 className="text-style">successfull Landing</h4>
+        <h4 className="text-style">successfull Launch</h4>
         <br />
         {successfullLaunch.map((t, index) => (
           <span
             className={`launch ${
-              typeof this.state.launch === "boolean" && this.state.launch===t ? "success":""
+              typeof this.state.launch === "boolean" && this.state.launch === t
+                ? "success"
+                : ""
             }`}
             onClick={() => this.udpateLaunchingStatus(t)}
             key={`landing-${index}`}
