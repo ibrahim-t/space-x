@@ -48,12 +48,14 @@ class RocketList extends React.Component {
                         </th>
                         <td>{r.launch_success ? "Yes" : "No"}</td>
                       </tr>
-                      {/* <tr>   // data is not ther for landing 
+                      <tr>
                         <th>
-                          <td>Mission Ids : </td>
+                          <td>Successful Landing : </td>
                         </th>
-                        <td>{r.mission_id}</td>
-                      </tr> */}
+                        <td>
+                          {r.rocket["first_stage"]["cores"][0]["land_success"]? "Yes":"No"}
+                        </td>
+                      </tr>
                     </table>
                   </div>
                 </div>
