@@ -6,14 +6,14 @@ export const Actions = {
 };
 function getUserFilter(filter) {
   let filterString = "";
-  if (filter["year"]) {
-    filterString = `launch_year=${filter["year"]}`;
+  if (typeof filter["launch"] === "boolean") {
+    filterString = `${filterString}&launch_success=${filter["launch"]}`;
   }
   if (typeof filter["landing"] === "boolean") {
-    filterString = `${filterString}&land_success${filter["landing"]}`;
+    filterString = `${filterString}&land_success=${filter["landing"]}`;
   }
-  if (typeof filter["launch"] === "boolean") {
-    filterString = `${filterString}&launch_success${filter["launch"]}`;
+  if (filter["year"]) {
+    filterString = `${filterString}&launch_year=${filter["year"]}`;
   }
   return filterString;
 }
@@ -22,9 +22,9 @@ export function doFetchData() {
   return async (dispatch) => {
     try {
       const result = await axios.get(
-        "https://api.spaceXdata.com/v3/launches?limit=10"
+        "https://api.spaceXdata.com/v3/launches?limit=15"
       );
-      if (result.data && result.data.length > 0) {
+      if (result.data) {
         dispatch({ type: Actions.FETCH_INITIAL_RECORD, records: result.data });
       }
     } catch (ex) {
@@ -43,7 +43,7 @@ export function doUpdateFilter(evt) {
       const result = await axios.get(
         `https://api.spaceXdata.com/v3/launches?limit=10&${filterString}`
       );
-      if (result.data && result.data.length > 0) {
+      if (result.data) {
         dispatch({ type: Actions.UPDATE_DATA, records: result.data });
       }
     } catch (ex) {
