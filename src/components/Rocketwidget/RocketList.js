@@ -2,6 +2,7 @@ import React from "react";
 import { withReducer } from "../HOC/withReducer";
 import { doFetchData, doUpdateFilter } from "./actions";
 import { reducer } from "./reducer";
+import rocket from "./rockets_images/spaceship.jpg"
 import { Filterbar } from "../Filterbar";
 class RocketList extends React.Component {
   componentWillMount() {
@@ -24,7 +25,7 @@ class RocketList extends React.Component {
                     <img
                       className="rocket-image"
                       alt={r.rocket["rocket_name"]}
-                      src={r.img}
+                      src={rocket}
                     />
                   </div>
                   <div className="rocket-detail">
@@ -50,7 +51,7 @@ class RocketList extends React.Component {
                       </tr>
                       <tr>
                         <th>
-                          <td>Successful Landing : </td>
+                          <td>Successful Landing :</td>
                         </th>
                         <td>
                           {r.rocket["first_stage"]["cores"][0]["land_success"]? "Yes":"No"}
